@@ -28,6 +28,17 @@
         .row .thumbnail .progress {
             margin: 30px 30px 0px;;
         }
+
+        .u-rank-down {
+            float: right;
+            color: red;
+        }
+
+        .u-rank-up {
+            float: right;
+            color: green;
+        }
+
     </style>
 </head>
 
@@ -125,10 +136,12 @@
                             <h4>{{suggestion.speciality}}</h4>
                             <ul class="list-group">
                                 <li class="list-group-item">
+                                    <span class="{{ suggestion.job_offers_grow ? 'u-rank-up glyphicon glyphicon-arrow-up' : 'u-rank-down glyphicon glyphicon-arrow-down' }}" aria-hidden="true"></span>
                                     <span class="badge">{{suggestion.job_offers_volume}}</span>
                                     Клькість вакансій по Украіні
                                 </li>
                                 <li class="list-group-item">
+                                    <span class="{{ suggestion.average_revenue_grow ? 'u-rank-up glyphicon glyphicon-arrow-up' : 'u-rank-down glyphicon glyphicon-arrow-down' }}" aria-hidden="true"></span>
                                     <span class="badge">{{suggestion.avg_rev}}</span>
                                     Середня з.п.
                                 </li>
