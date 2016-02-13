@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/bootstrap-slider.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        .row .thumbnail .progress {
+            margin: 30px 30px 0px;;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Skool. Поступай с умом.</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-3 sidebar">
+            <blockquote>
+                <p>Обери професію до душі.</p>
+            </blockquote>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="skill-1" class="col-sm-4 control-label">Художній</label>
+                    <div class="col-sm-8">
+                        <input class="skill-slider" id="skill-1" data-slider-tooltip="hide" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="skill-2" class="col-sm-4 control-label">Міжособистісні</label>
+                    <div class="col-sm-8">
+                        <input class="skill-slider" id="skill-2" data-slider-tooltip="hide" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="skill-3" class="col-sm-4 control-label">Комунікація</label>
+                    <div class="col-sm-8">
+                        <input class="skill-slider" id="skill-3" data-slider-tooltip="hide" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="skill-4" class="col-sm-4 control-label">Управління</label>
+                    <div class="col-sm-8">
+                        <input class="skill-slider" id="skill-4" data-slider-tooltip="hide" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="skill-5" class="col-sm-4 control-label">Математика</label>
+                    <div class="col-sm-8">
+                        <input class="skill-slider" id="skill-5" data-slider-tooltip="hide" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="skill-6" class="col-sm-4 control-label">Механіка</label>
+                    <div class="col-sm-8">
+                        <input class="skill-slider" id="skill-6" data-slider-tooltip="hide" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="skill-7" class="col-sm-4 control-label">Наука</label>
+                    <div class="col-sm-8">
+                        <input class="skill-slider" id="skill-7" data-slider-tooltip="hide" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 main">
+            <h1 class="page-header">Результати</h1>
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-5">
+                    <div class="thumbnail">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+                                75%
+                            </div>
+                        </div>
+                        <div class="caption">
+                            <h3>Інтелектуальна власність</h3>
+                            <p>...</p>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <span class="badge">1535</span>
+                                    Клькість вакансій по Украіні
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">9500</span>
+                                    Середня з.п.
+                                </li>
+                            </ul>
+
+                            <p><a href="#" class="btn btn-default" role="button">Далі</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-5">
+                    <div class="thumbnail">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                60%
+                            </div>
+                        </div>
+                        <div class="caption">
+                            <h3>Компьютерні науки</h3>
+                            <p>...</p>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <span class="badge">1535</span>
+                                    Клькість вакансій по Украіні
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">9500</span>
+                                    Середня з.п.
+                                </li>
+                            </ul>
+
+                            <p><a href="#" class="btn btn-default" role="button">Далі</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-5">
+                    <div class="thumbnail">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                60%
+                            </div>
+                        </div>
+                        <div class="caption">
+                            <h3>Математика</h3>
+                            <p>...</p>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <span class="badge">157</span>
+                                    Клькість вакансій по Украіні
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">17000</span>
+                                    Середня з.п.
+                                </li>
+                            </ul>
+
+                            <p><a href="#" class="btn btn-default" role="button">Далі</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <h2 class="sub-header">Section title</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1,001</td>
+                        <td>Lorem</td>
+                        <td>ipsum</td>
+                        <td>dolor</td>
+                        <td>sit</td>
+                    </tr>
+                    <tr>
+                        <td>1,002</td>
+                        <td>amet</td>
+                        <td>consectetur</td>
+                        <td>adipiscing</td>
+                        <td>elit</td>
+                    </tr>
+                    <tr>
+                        <td>1,003</td>
+                        <td>Integer</td>
+                        <td>nec</td>
+                        <td>odio</td>
+                        <td>Praesent</td>
+                    </tr>
+                    <tr>
+                        <td>1,003</td>
+                        <td>libero</td>
+                        <td>Sed</td>
+                        <td>cursus</td>
+                        <td>ante</td>
+                    </tr>
+                    <tr>
+                        <td>1,004</td>
+                        <td>dapibus</td>
+                        <td>diam</td>
+                        <td>Sed</td>
+                        <td>nisi</td>
+                    </tr>
+                    <tr>
+                        <td>1,005</td>
+                        <td>Nulla</td>
+                        <td>quis</td>
+                        <td>sem</td>
+                        <td>at</td>
+                    </tr>
+                    <tr>
+                        <td>1,006</td>
+                        <td>nibh</td>
+                        <td>elementum</td>
+                        <td>imperdiet</td>
+                        <td>Duis</td>
+                    </tr>
+                    <tr>
+                        <td>1,007</td>
+                        <td>sagittis</td>
+                        <td>ipsum</td>
+                        <td>Praesent</td>
+                        <td>mauris</td>
+                    </tr>
+                    <tr>
+                        <td>1,008</td>
+                        <td>Fusce</td>
+                        <td>nec</td>
+                        <td>tellus</td>
+                        <td>sed</td>
+                    </tr>
+                    <tr>
+                        <td>1,009</td>
+                        <td>augue</td>
+                        <td>semper</td>
+                        <td>porta</td>
+                        <td>Mauris</td>
+                    </tr>
+                    <tr>
+                        <td>1,010</td>
+                        <td>massa</td>
+                        <td>Vestibulum</td>
+                        <td>lacinia</td>
+                        <td>arcu</td>
+                    </tr>
+                    <tr>
+                        <td>1,011</td>
+                        <td>eget</td>
+                        <td>nulla</td>
+                        <td>Class</td>
+                        <td>aptent</td>
+                    </tr>
+                    <tr>
+                        <td>1,012</td>
+                        <td>taciti</td>
+                        <td>sociosqu</td>
+                        <td>ad</td>
+                        <td>litora</td>
+                    </tr>
+                    <tr>
+                        <td>1,013</td>
+                        <td>torquent</td>
+                        <td>per</td>
+                        <td>conubia</td>
+                        <td>nostra</td>
+                    </tr>
+                    <tr>
+                        <td>1,014</td>
+                        <td>per</td>
+                        <td>inceptos</td>
+                        <td>himenaeos</td>
+                        <td>Curabitur</td>
+                    </tr>
+                    <tr>
+                        <td>1,015</td>
+                        <td>sodales</td>
+                        <td>ligula</td>
+                        <td>in</td>
+                        <td>libero</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-slider.js"></script>
+
+<script type="text/javascript">
+    $('.skill-slider').slider();
+</script>
+</body>
+</html>
