@@ -7,6 +7,17 @@ var app = angular.module('skool', []).controller('MainCtrl', function($scope, $h
         suggestions:[]
     };
 
+    $scope.chooseSpeciality = function(index) {
+        var univerRates = $scope.model.suggestions[index].univer_rates;
+        $scope.model.univer_rates =  univerRates;
+        $scope.model.enter_probs = univerRates.map(function(rate) {
+            return {
+                v: rate.enter_prob,
+                color: rate.color
+            };
+        });
+    }
+
     function init() {
         $('.skill-slider').slider();
         $('#skill-1').slider('on', 'change', changeHandler(0));
@@ -29,7 +40,6 @@ var app = angular.module('skool', []).controller('MainCtrl', function($scope, $h
             }
         }
     }
-
 
     var metrics = {
         data:[0,0,0,0,0,0,0],
@@ -57,6 +67,7 @@ var app = angular.module('skool', []).controller('MainCtrl', function($scope, $h
                     average_revenue: rawDataItem.avg_rev,
                     job_offers_grow: rawDataItem.spros > 0,
                     average_revenue_grow: rawDataItem.avg_rev_grow,
+                    univer_rates: rawDataItem.univerRates
                 });
             }
 

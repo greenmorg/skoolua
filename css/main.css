@@ -103,3 +103,47 @@ body {
     display: inline-block;
     border-radius: 50%;
 }
+
+.chart-area .chart-label {
+    float: left;
+    height: 30px;
+    line-height: 14px;
+    width: 80px;
+    margin: 0 5px 0 0;
+}
+.chart-area .chart-label strong {
+    width: 100%;
+    height: 100%;
+    display: table;
+    font-weight: normal;
+}
+.chart-area .chart-label span {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.chart-area .chart-item {
+    width: 500px;
+    padding: 9px 0;
+    border-bottom: 1px solid #d8d8d8;
+}
+.chart-area .chart-item:last-child {
+    border-bottom: none;
+}
+.chart-area .bar {
+    stroke: #fff;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+percent-horizontal-chart {
+    width: 300px;
+    height: 40px;
+    float: left;
+}
