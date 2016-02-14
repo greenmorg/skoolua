@@ -73,7 +73,7 @@ var app = angular.module('skool', []).controller('MainCtrl', function($scope, $h
 
             /*TODO: sort by salary and job offers*/
             res.sort(function(a,b){return b.score - a.score;});
-            return res;
+            return res.slice(0,6);
         },
 
         calculateScore: function(metrics, specialityMetrics) {
