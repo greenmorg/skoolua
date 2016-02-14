@@ -32,6 +32,7 @@ var app = angular.module('skool', []).controller('MainCtrl', function($scope, $h
 
         $http.get('data/match-spec-data.json').then(function(res) {
            suggester.rawData = res.data;
+            calculateSuggestions();
         });
 
         function changeHandler(id){
@@ -42,10 +43,16 @@ var app = angular.module('skool', []).controller('MainCtrl', function($scope, $h
                 $scope.$apply();
             }
         }
+
+        function calculateSuggestions() {
+            $scope.model.suggestions = suggester.suggest(metrics.getData());
+            $scope.model.specialityIndex = -1;
+            $scope.$apply();
+        }
     }
 
     var metrics = {
-        data:[0,0,0,0,0,0,0],
+        data:[60,30,20,0,0,0,0],
         setMetric: function(id, value)
         {
             this.data[id] = value;

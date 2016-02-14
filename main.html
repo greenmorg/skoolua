@@ -88,21 +88,21 @@
                 <div class="form-group">
                     <label for="skill-1" class="col-sm-4 control-label">Математика</label>
                     <div class="col-sm-8">
-                        <input class="skill-slider" id="skill-1" data-slider-tooltip="hide" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+                        <input class="skill-slider" id="skill-1" data-slider-tooltip="hide" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="60"/>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="skill-2" class="col-sm-4 control-label">Механіка</label>
                     <div class="col-sm-8">
-                        <input class="skill-slider" id="skill-2" data-slider-tooltip="hide" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+                        <input class="skill-slider" id="skill-2" data-slider-tooltip="hide" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="30"/>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="skill-3" class="col-sm-4 control-label">Наука</label>
                     <div class="col-sm-8">
-                        <input class="skill-slider" id="skill-3" data-slider-tooltip="hide" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+                        <input class="skill-slider" id="skill-3" data-slider-tooltip="hide" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="20"/>
                     </div>
                 </div>
 
@@ -139,7 +139,7 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 main">
             <h1 class="page-header">Результати</h1>
             <div class="row">
-                <div class="col-xs-6 col-sm-4" ng-repeat="suggestion in model.suggestions track by $index" ng-click="chooseSpeciality($index)">
+                <div class="col-xs-6 col-sm-4" ng-repeat="suggestion in model.suggestions track by $index" ng-click="chooseSpeciality($index)" style="cursor: pointer">
                     <div class="thumbnail" ng-style="{background:(model.specialityIndex == $index ?'#d9edf7':'')}">
                         <div class="progress">
                             <div class="progress-bar {{ suggestion.score > 60 ? 'progress-bar-success' : 'progress-bar-warning' }} " role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:{{suggestion.score}}%">
@@ -174,7 +174,7 @@
                             <label class="col-sm-4 control-label">{{ univerRate.title }}</label>
                             <div class="progress">
                                 <div class="progress-bar {{ univerRate.v > 60 ? 'progress-bar-success' : 'progress-bar-warning' }} " role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:{{univerRate.v}}%">
-                                    {{univerRate.v}}%
+                                    {{univerRate.v}}
                                 </div>
                             </div>
                         </div>
