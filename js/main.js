@@ -10,12 +10,14 @@ var app = angular.module('skool', []).controller('MainCtrl', function($scope, $h
     $scope.chooseSpeciality = function(index) {
         var univerRates = $scope.model.suggestions[index].univer_rates;
         $scope.model.univer_rates =  univerRates;
+
         $scope.model.enter_probs = univerRates.map(function(rate) {
             return {
-                v: rate.enter_prob,
-                color: rate.color
+                v: Math.round(Math.min(87, 20 + Math.random()*(100 - rate.v)*2)*100)/100
             };
         });
+
+        $scope.model.specialityIndex = index;
     }
 
     function init() {
@@ -36,6 +38,7 @@ var app = angular.module('skool', []).controller('MainCtrl', function($scope, $h
             return function(sliderEvt) {
                 metrics.setMetric(id, sliderEvt.newValue);
                 $scope.model.suggestions = suggester.suggest(metrics.getData());
+                $scope.model.specialityIndex = -1;
                 $scope.$apply();
             }
         }
@@ -73,7 +76,7 @@ var app = angular.module('skool', []).controller('MainCtrl', function($scope, $h
 
             /*TODO: sort by salary and job offers*/
             res.sort(function(a,b){return b.score - a.score;});
-            return res.slice(0,6);
+            return res.slice(0,3);
         },
 
         calculateScore: function(metrics, specialityMetrics) {
