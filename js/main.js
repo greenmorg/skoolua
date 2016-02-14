@@ -131,9 +131,10 @@ var app = angular.module('skool', []).controller('MainCtrl', function($scope, $h
             }
 
             var cosScore =  parseInt((product(metrics, specialityMetrics)*1.0/(module(metrics)*module(specialityMetrics)))*100);
-            var sizeScore = sizeScore(metrics, specialityMetrics);
+            // var sizeScore = sizeScore(metrics, specialityMetrics);
+            var sizeScore = Math.min(1, module(specialityMetrics)*1.0/module(metrics))*100;
 
-            return (cosScore + sizeScore)/2;
+            return Math.round(cosScore + sizeScore)/2;
         }
     };
 });
