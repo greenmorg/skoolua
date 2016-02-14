@@ -42,12 +42,12 @@ var app = angular.module('skool', []).controller('MainCtrl', function($scope) {
     var suggester = {
         suggest: function(data) {
             var rawData = [
-                {sector:'Управління та адміністрування',speciality_id:71, speciality_name:'Облік і оподаткування',vacancy_num:3856,spros:0.06, avg_rev:5360.5, avg_rev_grow:true, people_num:31287.2727272727,skill:[80,60,40,60,80,100]},
-                {sector:'Управління та адміністрування',speciality_id:72, speciality_name:'Фінанси, банківська справа та страхування',vacancy_num:3552,spros:0.05, avg_rev:6884, avg_rev_grow:true, people_num:26072.7272727273,skill:[80,40,40,80,80,100]},
-                {sector:'Управління та адміністрування',speciality_id:73, speciality_name:'Менеджмент',vacancy_num:1349,spros:0.05, avg_rev:5226, avg_rev_grow:true, people_num:26072.7272727273,skill:[60,40,60,100,100,100]},
-                {sector:'Управління та адміністрування',speciality_id:74, speciality_name:'Публічне управління та адміністрування',vacancy_num:1349,spros:0.05, avg_rev:5226, avg_rev_grow:true, people_num:26072.7272727273,skill:[60,60,40,80,100,100]},
-                {sector:'Управління та адміністрування',speciality_id:75, speciality_name:'Маркетинг',vacancy_num:5639,spros:0.11, avg_rev:6510, avg_rev_grow:false, people_num:57360,skill:[40,60,80,100,80,100]},
-                {sector:'Управління та адміністрування',speciality_id:76, speciality_name:'Підприємництво, торгівля та біржова діяльність',vacancy_num:31072,spros:0.23, avg_rev:5060.2, avg_rev_grow:true, people_num:119934.545454545,skill:[60,40,60,60,100,100]},
+                {sector:'Управління та адміністрування',speciality_id:71, speciality_name:'Облік і оподаткування',vacancy_num:3856,spros:0.06, avg_rev:5360.5, avg_rev_grow:true, people_num:31287.2727272727,skill:[0,0,40,60,80,100,100]},
+                {sector:'Управління та адміністрування',speciality_id:72, speciality_name:'Фінанси, банківська справа та страхування',vacancy_num:3552,spros:0.05, avg_rev:6884, avg_rev_grow:true, people_num:26072.7272727273,skill:[80,40,40,80,80,100,100]},
+                {sector:'Управління та адміністрування',speciality_id:73, speciality_name:'Менеджмент',vacancy_num:1349,spros:0.05, avg_rev:5226, avg_rev_grow:true, people_num:26072.7272727273,skill:[60,40,60,100,100,100,100]},
+                {sector:'Управління та адміністрування',speciality_id:74, speciality_name:'Публічне управління та адміністрування',vacancy_num:1349,spros:0.05, avg_rev:5226, avg_rev_grow:true, people_num:26072.7272727273,skill:[60,60,40,80,100,100,100]},
+                {sector:'Управління та адміністрування',speciality_id:75, speciality_name:'Маркетинг',vacancy_num:5639,spros:0.11, avg_rev:6510, avg_rev_grow:false, people_num:57360,skill:[40,60,80,100,80,100,100]},
+                {sector:'Управління та адміністрування',speciality_id:76, speciality_name:'Підприємництво, торгівля та біржова діяльність',vacancy_num:31072,spros:0.23, avg_rev:5060.2, avg_rev_grow:true, people_num:119934.545454545,skill:[60,40,60,60,100,100,100]},
             ];
 
             var res = [];
@@ -69,15 +69,41 @@ var app = angular.module('skool', []).controller('MainCtrl', function($scope) {
         },
 
         calculateScore: function(metrics, specialityMetrics) {
-            var score = 0;
-            for(var i in metrics) {
-                var metricDiff = metrics[i] - specialityMetrics[i];
-                if(metricDiff > 0) {
-                    score += metricDiff;
+
+            function module(vector) {
+                var norm=0;
+                for(var i in vector) {
+                    norm += vector[i]*vector[i];
                 }
+
+                return Math.sqrt(norm);
             }
 
-            return 100 - parseInt(score/7);
+            function product(vector1, vector2) {
+                var product=0;
+                for(var i in vector1) {
+                    product += vector1[i]*vector2[i];
+                }
+
+                return product;
+            }
+
+            function sizeScore(vector1, vector2) {
+                var score = 0;
+                for(var i in vector1) {
+                    var metricDiff = vector1[i] - vector2[i];
+                    if(metricDiff > 0) {
+                        score += metricDiff;
+                    }
+                }
+
+                return 100 - parseInt(score/7);
+            }
+
+            var cosScore =  parseInt((product(metrics, specialityMetrics)*1.0/(module(metrics)*module(specialityMetrics)))*100);
+            var sizeScore = sizeScore(metrics, specialityMetrics);
+
+            return (cosScore + sizeScore)/2;
         }
     };
 });
