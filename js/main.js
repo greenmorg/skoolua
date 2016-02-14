@@ -40,14 +40,20 @@ var app = angular.module('skool', []).controller('MainCtrl', function($scope, $h
                 metrics.setMetric(id, sliderEvt.newValue);
                 $scope.model.suggestions = suggester.suggest(metrics.getData());
                 $scope.model.specialityIndex = -1;
+                $scope.metricSum = metrics.getSum();
                 $scope.$apply();
+                if(metrics.getSum() > 600) {
+                    $('#chuck').show();
+                } else {
+                    $('#chuck').hide();
+                }
             }
         }
 
         function calculateSuggestions() {
             $scope.model.suggestions = suggester.suggest(metrics.getData());
             $scope.model.specialityIndex = -1;
-            $scope.$apply();
+            $scope.metricSum = metrics.getSum();
         }
     }
 
@@ -60,6 +66,12 @@ var app = angular.module('skool', []).controller('MainCtrl', function($scope, $h
 
         getData: function() {
             return this.data;
+        },
+
+        getSum: function() {
+            return this.data.reduce(function(previousValue, currentValue, index, array) {
+                return previousValue + currentValue;
+            });
         }
     };
 
